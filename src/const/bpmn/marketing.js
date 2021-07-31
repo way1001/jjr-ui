@@ -1,0 +1,77 @@
+export const marketingOption = [{
+  variableId: 'directPush',
+  variableType: 'boolean',
+  variableLabel: '系统推荐分配',
+  variableString: '',
+  variableBoolean: 0,
+  variableInteger: 0,
+  description: '确认是否系统推荐分配客户，布尔类型变量，《真》为系统推荐分配，《否》为人工分配，默认为《否》',
+}, {
+  variableId: 'remindUrgedRoles',
+  variableType: 'string',
+  variableLabel: '提醒催办角色',
+  variableString: 'secretary',
+  variableBoolean: 1,
+  variableInteger: 0,
+  description: '提醒催办角色，请根据您系统角色管理选项上设置角色编码值输入，默认为《secretary》。',
+}, {
+  variableId: 'assignedRoles',
+  variableType: 'string',
+  variableLabel: '业务分配角色',
+  variableString: 'secretary',
+  variableBoolean: 1,
+  variableInteger: 0,
+  description: '配置分配角色，请根据您系统角色管理选项上设置角色编码值输入，默认为《secretary》。',
+}, {
+  variableId: 'allocatedRoles',
+  variableType: 'string',
+  variableLabel: '被分配角色',
+  variableString: 'salesman',
+  variableBoolean: 1,
+  variableInteger: 0,
+  description: '配置被分配角色，请根据您系统角色管理选项上设置角色编码输入，默认为《salesman》。',
+}, {
+  variableId: 'dockingRoles',
+  variableType: 'string',
+  variableLabel: '对接角色',
+  variableString: 'access',
+  variableBoolean: 1,
+  variableInteger: 0,
+  description: '配置审核角色，请根据您系统角色管理选项上设置角色编码输入，默认为《access》。',
+}, {
+  variableId: 'expireReminderDuration',
+  variableType: 'string',
+  variableLabel: '办理提醒',
+  variableString: 'PT30M',
+  variableBoolean: 1,
+  variableInteger: 0,
+  description: '办理提醒，P(PT)为时间前缀不能缺省，数字代表有效时间数字，最后一个字符代表时间类型S代表秒，' +
+    'M代表分，H代表小时，D代表天，默认为《PT30M》，代表30分。',
+}, {
+  variableId: 'overdueReminderDuration',
+  variableType: 'string',
+  variableLabel: '报备提醒',
+  variableString: 'P15D',
+  variableBoolean: 1,
+  variableInteger: 0,
+  description: '报备提醒，P(PT)为时间前缀不能缺省，数字代表有效时间数字，最后一个字符代表时间类型S代表秒，' +
+    'M代表分，H代表小时，D代表天，默认为《P15D》，代表15天。',
+},{
+  variableId: 'expirationDuration',
+  variableType: 'string',
+  variableLabel: '有效期',
+  variableString: 'P30D',
+  variableBoolean: 1,
+  variableInteger: 0,
+  description: '有效期，P(PT)为时间前缀不能缺省，数字代表有效时间数字，最后一个字符代表时间类型S代表秒，' +
+    'M代表分，H代表小时，D代表天，默认为《P30D》，代表30天。',
+},{
+  variableId: 'receiveTimeoutDuration',
+  variableType: 'string',
+  variableLabel: '有效期',
+  variableString: 'PT30M',
+  variableBoolean: 1,
+  variableInteger: 0,
+  description: '有效期，P(PT)为时间前缀不能缺省，数字代表有效时间数字，最后一个字符代表时间类型S代表秒，' +
+    'M代表分，H代表小时，D代表天，默认为《PT30M》，代表30分钟。',
+}]
