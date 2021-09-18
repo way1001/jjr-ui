@@ -25,6 +25,37 @@
         @sort-change="sortChange"
         @search-change="searchChange"
       >
+      <template slot="longitudeForm" slot-scope="scope">
+          <!--<baidu-map class="map" center="北京">-->
+          <!--<bm-geolocation anchor="BMAP_ANCHOR_BOTTOM_RIGHT" :showAddressBar="true" :autoLocation="true"></bm-geolocation>-->
+          <!--</baidu-map>-->
+          <!--<MapDialog :dialogVisible="showMapComponent"></MapDialog>-->
+          <el-row :gutter="20">
+            <el-col :span="6">
+              <el-input
+                placeholder="地图获取经度"
+                size="mini"
+                v-model="scope.row.longitude"
+                disabled
+              >
+              </el-input>
+            </el-col>
+            <el-col :span="6">
+              <el-input
+                placeholder="地图获取纬度"
+                size="mini"
+                v-model="scope.row.latitude"
+                disabled
+              >
+              </el-input>
+            </el-col>
+            <el-col :span="8">
+              <el-button size="mini" type="info" @click="showMapDialog()"
+                >点击地图获取</el-button
+              >
+            </el-col>
+          </el-row>
+        </template>
         <template slot="price" slot-scope="scope">
           <div style="color: red">￥{{ scope.row.price }}</div>
         </template>
@@ -41,6 +72,11 @@
           <img style="height: 100px" :src="scope.row.firstFigure" />
         </template>
       </avue-crud>
+       <MapDialog
+        :dialogVisible="showMapComponent"
+        @cancel="cancelMap"
+        @map-confirm="confirmMap"
+      ></MapDialog>
     </basic-container>
   </div>
 </template>
@@ -50,11 +86,13 @@ import { getPage, addObj, putObj, delObj } from "@/api/mkt/basicinfo";
 import { tableOption } from "@/const/crud/mkt/basicinfo";
 import { mapGetters } from "vuex";
 import MaterialList from "@/components/material/list.vue";
+import MapDialog from "@/components/baidu-map/map-dialog.vue";
 
 export default {
   name: "basicinfo",
   components: {
     MaterialList,
+    MapDialog,
   },
   data() {
     return {
@@ -70,6 +108,7 @@ export default {
       paramsSearch: {},
       tableLoading: false,
       tableOption: tableOption,
+      showMapComponent: false,
     };
   },
   created() {},
@@ -86,6 +125,17 @@ export default {
     },
   },
   methods: {
+        cancelMap(val) {
+      this.showMapComponent = val;
+    },
+    confirmMap(val) {
+      console.log(val);
+      this.form.longitude = val.lng;
+      this.form.latitude = val.lat;
+    },
+    showMapDialog(row) {
+      this.showMapComponent = !this.showMapComponent;
+    },
     searchChange(params, done) {
       params = this.filterForm(params);
       this.paramsSearch = params;

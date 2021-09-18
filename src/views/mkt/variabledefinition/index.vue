@@ -151,6 +151,7 @@ import {
 import { definitionsService } from "@/api/mkt/definitions";
 import { tableOption } from "@/const/crud/mkt/variabledefinition";
 import { marketingOption } from "@/const/bpmn/marketing";
+import { tingOption } from "@/const/bpmn/ting";
 
 import { mapGetters } from "vuex";
 import { mapState } from "vuex";
@@ -179,9 +180,10 @@ export default {
         value: "id",
       },
       treeDefinitionData: [],
-      defaultBpmnConfig: ["marketing"],
+      defaultBpmnConfig: ["marketing", "ting"],
       filterTextDef: "",
       marketingOption: marketingOption,
+      tingOption: tingOption,
       affId: null,
       treeAffiliationProps: {
         label: "projectName",
@@ -444,7 +446,29 @@ export default {
               this.getPage(this.page);
             })
             .catch(() => {});
-          break;  
+          break; 
+        case "ting":
+          this.tingOption.map((item, index) => {
+            array.push(
+              Object.assign(item, {
+                tenantId: this.userInfo.tenantId,
+                definitionId: this.defId,
+                definitionKey: this.defKey,
+                affiliationId: this.affId,
+              })
+            );
+          });
+          addBatchObj(array)
+            .then((response) => {
+              this.$message({
+                showClose: true,
+                message: "添加成功",
+                type: "success",
+              });
+              this.getPage(this.page);
+            })
+            .catch(() => {});
+          break;     
         default:
           break;
       }

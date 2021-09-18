@@ -14,7 +14,7 @@ export const tableOption = {
     menuAlign: 'center',
     align: 'center',
     menuType: 'text',
-    searchShow: false,
+    searchShow: true,
     viewBtn: true,
     searchMenuSpan: 6,
     column: [
@@ -36,6 +36,7 @@ export const tableOption = {
         {
             label: '手机号码',
             prop: 'phone',
+            search: true,
             addDisplay: false,
             editDisplay: false,
             sortable: true,
@@ -49,6 +50,7 @@ export const tableOption = {
                 label: 'roleName',
                 value: 'roleCode'
             },
+            cascaderItem: ["affiliated"],
             dicUrl: '/mkt/userrole/list',
         },
         {
@@ -122,10 +124,11 @@ export const tableOption = {
                 label: 'projectName',
                 value: 'id',
             },
-            dicUrl: `/mkt/basicinfo/list`,
+            cascaderIndex: 0,
+            dicUrl: `/mkt/basicinfo/list/{{key}}`,
             rules: [
                 {
-                    required: true,
+                    required: false,
                     message: '请选择隶属楼盘',
                     trigger: 'blur'
                 }

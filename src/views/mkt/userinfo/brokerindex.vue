@@ -9,6 +9,8 @@
 <template>
   <div class="execution">
     <basic-container>
+                  <div style="text-align: center;color: red;margin-bottom: 10px">温馨提示：设置楼盘对应楼盘对接人角色后，推荐首页才会显示对应楼盘！</div>
+
       <avue-crud
         ref="crud"
         :page="page"
@@ -178,6 +180,10 @@ export default {
      **/
     handleUpdate: function (row, index, done, loading) {
       row.headimgUrl = row.headimgUrl[0];
+      if (!Array.isArray(row.affiliated)) {
+        let tmpArray = row.affiliated.split(',');
+        row.affiliated = tmpArray;
+      }
       putObj(row)
         .then((response) => {
           this.$message({

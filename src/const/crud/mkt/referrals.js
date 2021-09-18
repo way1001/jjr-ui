@@ -21,14 +21,77 @@ export const tableOption = {
     addBtn: false,
     searchMenuSpan: 6,
     column: [
-            {
-            label: '关联楼盘ID',
-            prop: 'affiliationId',
+        //     {
+        //     label: '关联楼盘ID',
+        //     prop: 'affiliationId',
+        //     sortable: true,
+        //     rules: [
+        //                             {
+        //                 max: 32,
+        //                 message: '长度在不能超过32个字符'
+        //             },
+        //         ]
+        // },
+        {
+            label: '客户姓名',
+            prop: 'customerName',
+            search: true,
+            sortable: true,
+            rules: [
+                    {
+                        required: true,
+                        message: '请输入客户姓名',
+                        trigger: 'blur'
+                    },
+                                    {
+                        max: 64,
+                        message: '长度在不能超过64个字符'
+                    },
+                ]
+        },
+        {
+            label: '性别',
+            prop: 'gender',
+            sortable: true,
+            type: 'radio',
+            dicData: [{
+                label: '未知',
+                value: '0'
+            }, {
+                label: '男',
+                value: '1'
+            }, {
+                label: '女',
+                value: '2'
+            }
+            ],
+        },
+        {
+            label: '客户姓名',
+            prop: 'customerName',
+            search: true,
+            sortable: true,
+            rules: [
+                    {
+                        required: true,
+                        message: '请输入客户姓名',
+                        trigger: 'blur'
+                    },
+                                    {
+                        max: 64,
+                        message: '长度在不能超过64个字符'
+                    },
+                ]
+        },
+        {
+            label: '客户手机号码',
+            prop: 'phone',
+            search: true,
             sortable: true,
             rules: [
                                     {
-                        max: 32,
-                        message: '长度在不能超过32个字符'
+                        max: 15,
+                        message: '长度在不能超过15个字符'
                     },
                 ]
         },
@@ -55,63 +118,6 @@ export const tableOption = {
                         trigger: 'blur'
                     },
                                 ]
-        },
-            {
-            label: '客户手机号码',
-            prop: 'phone',
-            search: true,
-            sortable: true,
-            rules: [
-                                    {
-                        max: 15,
-                        message: '长度在不能超过15个字符'
-                    },
-                ]
-        },
-            {
-            label: '客户姓名',
-            prop: 'customerName',
-            search: true,
-            sortable: true,
-            rules: [
-                    {
-                        required: true,
-                        message: '请输入客户姓名',
-                        trigger: 'blur'
-                    },
-                                    {
-                        max: 64,
-                        message: '长度在不能超过64个字符'
-                    },
-                ]
-        },
-            {
-            label: '性别',
-            prop: 'gender',
-            sortable: true,
-            type: 'radio',
-            dicData: [{
-                label: '未知',
-                value: '0'
-            }, {
-                label: '男',
-                value: '1'
-            }, {
-                label: '女',
-                value: '2'
-            }
-            ],
-        },
-            {
-            label: '描述',
-            prop: 'description',
-            sortable: true,
-            rules: [
-                                    {
-                        max: 255,
-                        message: '长度在不能超过255个字符'
-                    },
-                ]
         },
         //     {
         //     label: '经纪人ID',
@@ -168,28 +174,39 @@ export const tableOption = {
                     },
                 ]
         },
-            {
-            label: '话事人',
-            prop: 'staffId',
+        {
+            label: '描述',
+            prop: 'description',
             sortable: true,
             rules: [
                                     {
-                        max: 32,
-                        message: '长度在不能超过32个字符'
+                        max: 255,
+                        message: '长度在不能超过255个字符'
                     },
                 ]
         },
-            {
-            label: '流程实例',
-            prop: 'instanceId',
-            sortable: true,
-            rules: [
-                                    {
-                        max: 64,
-                        message: '长度在不能超过64个字符'
-                    },
-                ]
-        },
+        //     {
+        //     label: '话事人',
+        //     prop: 'staffId',
+        //     sortable: true,
+        //     rules: [
+        //                             {
+        //                 max: 32,
+        //                 message: '长度在不能超过32个字符'
+        //             },
+        //         ]
+        // },
+        //     {
+        //     label: '流程实例',
+        //     prop: 'instanceId',
+        //     sortable: true,
+        //     rules: [
+        //                             {
+        //                 max: 64,
+        //                 message: '长度在不能超过64个字符'
+        //             },
+        //         ]
+        // },
             {
             label: '流程状态',
             prop: 'workflowStatus',

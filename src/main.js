@@ -24,6 +24,8 @@ import VueQr from 'vue-qr'
 import VideoPlayer from 'vue-video-player'
 //时间插件
 import moment from 'moment'//导入文件
+
+import BaiduMap from 'vue-baidu-map'
 //引入 Froala Editor js file.
 require('froala-editor/js/froala_editor.pkgd.min.js')
 //引入中文语言包
@@ -35,6 +37,12 @@ require('font-awesome/css/font-awesome.css')
 // Import and use Vue Froala lib.
 import VueFroala from 'vue-froala-wysiwyg'
 import animate from 'animate.css'
+
+Vue.use(BaiduMap, {
+  /* Visit http://lbsyun.baidu.com/apiconsole/key for details about app key. */
+  ak: 'G4kZoAqjyuBb1kOjyG3uQfi8BCyhYwRY'
+})
+
 Vue.use(Element)
 Vue.use(router)
 Vue.use(VueAxios, axios)

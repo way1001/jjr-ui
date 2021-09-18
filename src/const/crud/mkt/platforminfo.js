@@ -150,23 +150,11 @@ export const tableOption = {
             label: '免责声明',
             prop: 'disclaimer',
             sortable: true,
-            rules: [
-                                    {
-                        max: 65535,
-                        message: '长度在不能超过65535个字符'
-                    },
-                ]
         },
             {
             label: '注册协议',
             prop: 'registrationProtocol',
             sortable: true,
-            rules: [
-                                    {
-                        max: 65535,
-                        message: '长度在不能超过65535个字符'
-                    },
-                ]
         },
             {
             label: '平台省份',

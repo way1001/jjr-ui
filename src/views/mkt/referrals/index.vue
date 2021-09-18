@@ -29,7 +29,7 @@
 </template>
 
 <script>
-    import {getPage, getObj, addObj, putObj, delObj} from '@/api/mkt/referrals'
+    import {getPagePhone, getObj, addObj, putObj, delObj} from '@/api/mkt/referrals'
     import {tableOption} from '@/const/crud/mkt/referrals'
     import {mapGetters} from 'vuex'
 
@@ -90,7 +90,7 @@
             },
             getPage(page, params) {
                 this.tableLoading = true
-                getPage(Object.assign({
+                getPagePhone(Object.assign({
                     current: page.currentPage,
                     size: page.pageSize,
                     descs: this.page.descs,

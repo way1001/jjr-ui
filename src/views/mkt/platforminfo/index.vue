@@ -214,7 +214,7 @@ export default {
                 type: "textarea",
                 labelWidth: 200,
                 minRows: 10,
-                maxlength: 5000,
+                maxlength: 50000,
                 span: 24,
               },
 
@@ -224,7 +224,7 @@ export default {
                 type: "textarea",
                 labelWidth: 200,
                 minRows: 10,
-                maxlength: 5000,
+                maxlength: 50000,
                 span: 24,
               },
             ],
@@ -247,7 +247,7 @@ export default {
       };
     },
     title() {
-      return this.option.detail ? "编 辑" : "保 存";
+      return this.option.detail ? "编 辑" : "退出编辑";
     },
   },
   methods: {

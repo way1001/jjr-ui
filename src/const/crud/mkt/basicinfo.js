@@ -49,6 +49,25 @@ export const tableOption = {
                 },
             ]
         },
+        // {
+        //     label: '状态',
+        //     prop: 'delFlag',
+        //     type: 'radio',
+        //     slot: true,
+        //     span: 24,
+        //     rules: [{
+        //       required: true,
+        //       message: '请选择是否启用',
+        //       trigger: 'blur'
+        //     }],
+        //     dicData: [{
+        //       label: '显示',
+        //       value: '0'
+        //     }, {
+        //       label: '停用',
+        //       value: '1'
+        //     }]
+        //   },
         {
             label: '项目名称',
             prop: 'projectName',
@@ -152,6 +171,13 @@ export const tableOption = {
         {
             label: '区域',
             prop: 'region',
+            type: 'select',
+            sortable: true,
+            props: {
+                label: 're',
+                value: 're'
+            },
+            dicUrl: '/mkt/platforminfo/regions',
         },
         {
             label: '地址',
@@ -164,6 +190,16 @@ export const tableOption = {
                 },
             ]
         },
+        {
+            label: '经纬度',
+            prop: 'longitude',
+            span: 24,
+            formslot: true,
+          },
+          // {
+          //   label: '纬度',
+          //   prop: 'latitude',
+          // },
         {
             label: '楼盘电话',
             prop: 'premisesMobile',
@@ -195,6 +231,24 @@ export const tableOption = {
         {
             label: '有效期',
             prop: 'validity',
+        },
+        {
+            label: '选择置业顾问',
+            prop: 'counselor',
+            span: 24,
+            type: 'radio',
+            rules: [{
+                required: true,
+                message: '选择置业顾问',
+                trigger: 'blur'
+            }],
+            dicData: [{
+                label: '允许',
+                value: '0'
+            }, {
+                label: '不允许',
+                value: '1'
+            }]
         },
         {
             label: '佣金说明',

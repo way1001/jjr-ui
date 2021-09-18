@@ -16,6 +16,14 @@ export function getPage(query) {
     })
 }
 
+export function getPagePhone(query) {
+    return request({
+        url: '/mkt/referrals/pagephone',
+        method: 'get',
+        params: query
+    })
+}
+
 export function addObj(obj) {
     return request({
         url: '/mkt/referrals',

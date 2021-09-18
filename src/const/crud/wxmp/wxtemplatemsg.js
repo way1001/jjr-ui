@@ -88,6 +88,12 @@ export const tableOption = {
               },{
                 label: '客户分配成功通知',
                 value: '13'
+              },{
+                label: '客户确认通知',
+                value: '14'
+              },{
+                label: '员工身份认证审核通知',
+                value: '15'
               }]
         },
         {
